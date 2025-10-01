@@ -2,6 +2,7 @@
     --main-color: #333333;
     --text-color: #ffffff;
     --main-font-family: 'Belarius Sans', sans-serif;
+    --main-jp-font-family: 'Noto Sans JP', sans-serif;
 }
 
 
@@ -42,12 +43,15 @@ body {
     align-items: center;
 }
 
-/*    Navigation    */
+/*    Navigation Main    */
 .nav {
     grid-area: nav;
     color: var(--text-color);
     display: flex;
+    position: fixed;
 }
+
+/* LOGO */
 
 .logo-items {
     border-right: none;
@@ -58,25 +62,35 @@ body {
     height: auto;
     position: relative;
     display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    flex-wrap: wrap;
 }
 
 .mainLogo {
     margin: auto 0;
     padding: 0 0 0 10px;
+    text-align: center;
 }
 
 .groupLogo {
     margin: auto 0;
     padding: 0 0 0 20px;
+    text-align: center;
 }
+
+/* Navigation menu */
 
 .nav-container {
     margin: 0;
     padding: 0;
     flex: 1;
     position: relative;
-    height: 100%;
     background-color: var(--main-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
 }
 
 .nav-container::after {
@@ -86,7 +100,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    transform: skewX(-45deg);
+    transform: skewX(-15deg);
     transform-origin: top left;
     background: linear-gradient(
         to top left,
@@ -96,40 +110,37 @@ body {
 }
 
 .nav-container > .nav-list {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    position: relative;
-    z-index: 1000;
-
-}
-
-
-.nav-container > ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 20px;
-}
-
-.nav-container > ul > .nav-item {
-    text-transform: uppercase;
-    align-items: flex-end;
-}
-
-.nav-item {
     margin: auto 0;
     padding: 0;
+    width: 858px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    list-style: none;
 }
 
-.nav-item > p {
-    cursor: pointer;
+.nav-item a {
     color: var(--text-color);
-    font-family: 'belarius sans', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-item a:hover {
+    color: #FF4944;
+}
+
+.nav-item > a > .en-text {
+    text-transform: uppercase;
     font-size: 13px;
+    font-family: 'belarius sans', sans-serif;
     font-style: Wide Semibold oblique;
+    text-align: center;
+}
+
+.nav-item > a > .jp-text {
+    font-size: 9px;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
 }
 
 
