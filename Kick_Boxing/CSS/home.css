@@ -1,6 +1,7 @@
 :root {
     --main-color: #333333;
     --text-color: #ffffff;
+    --main-font-family: 'Belarius Sans', sans-serif;
 }
 
 
@@ -8,7 +9,8 @@
     max-width: 1366px;
     margin: 0 auto;
     padding: 0;
-    box-sizing: border-box;;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
 .grid-container {
@@ -41,15 +43,124 @@ body {
 }
 
 /*    Navigation    */
-
 .nav {
     grid-area: nav;
-    background-color: var(--main-color);
-    padding: 20px;
-    text-align: center;
+    /* background-color: var(--main-color); */
     color: var(--text-color);
-    font-size: 30px;
+    display: flex;
 }
+
+.nav:first-child {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-items {
+    border-right: none;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    width: 457px;
+    height: auto;
+    position: relative;
+}
+
+/* .logo-items::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    transform: skewX(-45deg);
+    transform-origin: top right;
+    border-right: 1px solid red;
+    background: linear-gradient(
+        to bottom right,
+        #333333 50%,
+        #333333 50%
+    );
+} */
+
+.groupLogo {
+    margin:  0 0 0 20px;
+}
+
+.nav-container {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    position: relative;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+.nav-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: skewX(-45deg);
+    transform-origin: top left;
+    background: linear-gradient(
+        to top left,
+        var(--main-color) 50%,
+        var(--main-color) 50%
+    ); 
+}
+
+.nav-container > .nav-list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    position: relative;
+    z-index: 1000;
+
+}
+
+/* .nav-list::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 20px;
+    background-color: linear-gradient(
+        to top left,
+        red 50%,
+        red 50%
+    );
+} */
+
+
+
+.nav-container > ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.nav-container > ul > li {
+    cursor: pointer;
+    color: var(--text-color);
+    font-family: 'belarius sans', sans-serif;
+    font-size: 13px;
+    font-style: Wide Semibold oblique;
+}
+
+.nav-container > ul > .nav-item {
+    text-transform: uppercase;
+    align-items: flex-end;
+}
+
 
 /*    Header    */
 
