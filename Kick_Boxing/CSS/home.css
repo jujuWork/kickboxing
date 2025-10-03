@@ -48,8 +48,9 @@ body {
     grid-area: nav;
     color: var(--text-color);
     display: flex;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
+    display: none;
 }
 
 /* LOGO */
@@ -144,6 +145,95 @@ body {
     text-align: center;
 }
 
+/* Hamburger Menu Styling */
+
+/* TOP portrait */
+.portrait {
+    width: 100%;
+    height: auto;
+    text-align: left;
+    background-color: var(--main-color);
+    padding: 10px 0 0 5px;
+
+}
+
+/* styling the menu button */
+.menu-btn {
+    width: 100px;
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+/* styling the hamburger lines */
+.menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background-color: var(--main-color);
+    transition: all 0.5s ease-out;
+}
+
+.bgnav-item {
+    color: var(--text-color);
+    padding-left: 5px;
+}
+
+/* Styling the three lines to make it an X */
+.menu-btn.close .btn-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--text-color);
+}
+
+.menu-btn.close .btn-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.close .btn-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--text-color);
+}
+
+/* Styling the position of the menu icon */
+.menu  {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--main-color);
+    padding: 10px 10px;
+    border-radius: 5px;
+    z-index: 2;
+    color: var(--text-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: (-100%);
+    transition: opacity 0.5s ease-out 0s, 
+                transform 0.5s ease-out 0s, 
+                visibility 0s 2s;
+}
+
+.menu.show {
+    opacity: 1;
+    visibility: visible;
+    animation: slideInFromTop 0.5s ease-out forwards;
+    transform: translateY(0);
+    transition: none;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
 
 /********************************** End of navigation menu  **********************************/
 
@@ -160,6 +250,7 @@ header {
     font-size: 30px;
     width: 100%;
     height: 100svh;
+    display: none;
 }
 
 
