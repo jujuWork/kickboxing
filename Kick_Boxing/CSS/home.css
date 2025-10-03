@@ -267,19 +267,19 @@ body {
     align-items: center;
     justify-content: center;
 }
-.line-sns a {
+.line-sns a:nth-child(1) {
     flex: 1;
 }
-.line-sns img {
+.line-sns img, .sns-icons img {
     transform: translate(1s ease-out);
 }
 
-.line-sns img:hover {
+.line-sns img:hover, .sns-icons img:hover {
     transform: translateY(-10px);
 }
 
-.sns-icon.btn-line:nth-child(1) {
-    margin: 0 0 0 200px;
+.sns-icons a:nth-child(2) {
+    margin-left: 50px;
 }
 
 
