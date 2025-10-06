@@ -146,11 +146,8 @@ body {
 }
 
 /* Hamburger Menu Styling */
-.hambuger-container {
-    display: flex;
-    /* width: 100svw;
-    height: 100svh; */
-    border: 1px solid blue;
+.bugermenu-container {
+    display: none;
 }
 
 /* TOP portrait */
@@ -282,6 +279,13 @@ body {
     margin-left: 50px;
 }
 
+/*    media queries    */
+@media (max-width: 768px) {
+    .bugermenu-container {
+        display: block;
+    }
+}
+
 
 /********************************** End of navigation menu  **********************************/
 
@@ -377,4 +381,6 @@ header {
             'section4'
             'footer';
     }
+
+
 }
