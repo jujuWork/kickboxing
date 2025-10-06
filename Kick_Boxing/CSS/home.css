@@ -232,7 +232,7 @@ body {
     color: var(--text-color);
     opacity: 0;
     visibility: hidden;
-    transform: (-100%);
+    transform: translateY(-100%);
     transition: opacity 0.5s ease-out 0s, 
                 transform 0.5s ease-out 0s, 
                 visibility 0s 2s;
@@ -279,7 +279,7 @@ body {
     margin-left: 50px;
 }
 
-/*    media queries    */
+/*    hamburger menu queries    */
 @media (max-width: 768px) {
     .bugermenu-container {
         display: block;
