@@ -50,7 +50,6 @@ body {
     display: flex;
     /* position: fixed; */
     width: 100%;
-    display: none;
 }
 
 /* LOGO */
@@ -95,21 +94,22 @@ body {
     align-items: end;
 }
 
-.nav-container::after {
+  /*.nav-container::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     width: 100%;
-    transform: skewX(-15deg);
+   transform: skewX(-15deg);
     transform-origin: top left;
     background: linear-gradient(
         to top left,
         var(--main-color) 50%,
         var(--main-color) 50%
-    ); 
-}
+    );  
+} */
+
 
 .nav-container > .nav-list {
     margin: auto 0;
