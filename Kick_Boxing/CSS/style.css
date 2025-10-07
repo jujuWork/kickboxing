@@ -16,11 +16,11 @@ body {
     grid-template-rows: repeat(4, 1fr);
     gap: 1px;
     grid-template-areas: 
-        'sidebar header header header header'
-        'sidebar content content content content'
-        'sidebar content content content content'
-        'sidebar content content content content'
-        'sidebar footer footer footer footer'
+        'navbar header header header header'
+        'navbar content content content content'
+        'navbar content content content content'
+        'navbar content content content content'
+        'navbar footer footer footer footer'
     ;
     /* width: 100%; */
 }
@@ -35,11 +35,17 @@ body {
     height: 100%;
 }
 
-.sidebar {
-    grid-area: sidebar;
-    background-color: blue;
+                    /* NAVIGATION BAR */
+
+.navbar {
+    border: 1px solid red;
+    grid-area: navbar;
     height: 100vh;
     width: 100%;
+}
+
+#nav-container {
+    display: flex;
 }
 
 .content {
