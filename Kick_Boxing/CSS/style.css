@@ -8,21 +8,22 @@
 * {
     padding: 0;
     margin: 0 auto;
-    max-width: 1366px;
+    font-size: 1.2rem;
 }
 
 body {
-    height: 100%;
+    width: 100%;
+    height: 100vh;
     margin: 0;
     background-color: var(--main-color);
+    overflow: hidden;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 250px repeat(4, 1fr);
-    /* grid-template-rows: repeat(4, 1fr); */
     grid-template-rows: auto 1fr 1fr 1fr auto;
-    gap: 1px;
+    gap: 0;
     grid-template-areas: 
         'navbar header header header header'
         'navbar content content content content'
@@ -43,7 +44,6 @@ body {
     grid-area: navbar;
     height: 100%;
     width: 100%;
-    align-self: stretch;
 }
 
 #nav-container {
@@ -51,27 +51,110 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    align-items: stretch;
-    align-content: stretch;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+.group-logo {
+    margin-top: 10px 0;
+    width: 100%;
+    display: flex;
 }
 
 .nav-items {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     background-color: var(--secondary-color);
     color: var(--main-text-color);
-    position: relative;
-    /* flex-grow: 1; */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 10px 0;
 }
 
-/* .nav-list {
-    border: 1px solid white;
-    list-style-type: none;
-    justify-content: space-around;
-    padding: 10px 10px;
+.nav-list {
+    position: relative;
     text-align: center;
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+    width: 100%;
+    margin: 0;
+    transition: 0.2s ease-in;
+    overflow: hidden;
+}
+
+/* .nav-list:hover {
+    color: var(--hover-text-color);
+    background-color: var(--main-color);
+    width: 100%;
 } */
+
+.nav-list::before,
+.nav-list::after {
+  content: "";
+  position: absolute;
+  /* Start hidden, or positioned off the edge */
+  opacity: 0; 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  
+  /* Create a large circle/semicircle */
+  width: 40px; /* Must be at least twice the desired radius */
+  height: 40px;
+  background-color: var(--main-color); /* Match the background *behind* the link, e.g., the body background */
+  pointer-events: none; /* Allows clicks on the link */
+}
+
+nav-list::before {
+  top: 0;
+  right: 0;
+  /* Position the element so that only the inner, concave arc is visible */
+  transform: translate(100%, -100%); /* Start completely off-screen */
+  /* border-bottom-left-radius: 40px; Creates the rounded corner */
+}
+
+.nav-list::after {
+  bottom: 0;
+  right: 0;
+  /* Position the element so that only the inner, concave arc is visible */
+  transform: translate(100%, 100%); /* Start completely off-screen */
+  border-top-left-radius: 40px; /* Creates the rounded corner */
+}
+
+.nav-list:hover::before,
+.nav-list:hover::after {
+  opacity: 1; 
+  /* Move them into position to "cut out" the corner */
+  transform: translate(0, 0); 
+}
+
+/* Refined Hover Positioning (Recommended) */
+.nav-list:hover::before {
+  /* Aligns the pseudo-element's corner with the link's corner */
+  transform: translate(2px, -2px); /* Adjust based on border size */
+}
+
+.nav-list::after {
+  /* Aligns the pseudo-element's corner with the link's corner */
+  transform: translate(2px, 2px); /* Adjust based on border size */
+}
+
+
+
 
 
 
