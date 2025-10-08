@@ -1,3 +1,10 @@
+:root {
+    --main-color: #0C0C0C;
+    --secondary-color: #481E14;
+    --main-text-color: #F2613F;
+    --hover-text-color: #fff;
+}
+
 * {
     padding: 0;
     margin: 0 auto;
@@ -5,15 +12,16 @@
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    margin: auto 0;
+    height: 100%;
+    margin: 0;
+    background-color: var(--main-color);
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 250px repeat(4, 1fr);
+    /* grid-template-rows: repeat(4, 1fr); */
+    grid-template-rows: auto 1fr 1fr 1fr auto;
     gap: 1px;
     grid-template-areas: 
         'navbar header header header header'
@@ -22,12 +30,58 @@ body {
         'navbar content content content content'
         'navbar footer footer footer footer'
     ;
-    /* width: 100%; */
+    min-height: 100vh;
 }
 
 .grid-item {
     width: 100%;
 }
+
+/*************** NAVIGATION BAR START ***************/
+
+.navbar {
+    grid-area: navbar;
+    height: 100%;
+    width: 100%;
+    align-self: stretch;
+}
+
+#nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.nav-items {
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--secondary-color);
+    color: var(--main-text-color);
+    position: relative;
+    /* flex-grow: 1; */
+}
+
+/* .nav-list {
+    border: 1px solid white;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 1.5rem;
+} */
+
+
+
+
+/*************** NAVIGATION BAR END ***************/
+
+
+
+
+
 
 .header {
     grid-area: header;
@@ -35,18 +89,6 @@ body {
     height: 100%;
 }
 
-                    /* NAVIGATION BAR */
-
-.navbar {
-    border: 1px solid red;
-    grid-area: navbar;
-    height: 100vh;
-    width: 100%;
-}
-
-#nav-container {
-    display: flex;
-}
 
 .content {
     grid-area: content;
@@ -69,5 +111,9 @@ body {
             'content'
             'footer'
         ;
+    }
+
+    .nav-items {
+        display: none;
     }
 }
