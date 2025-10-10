@@ -9,13 +9,14 @@
     padding: 0;
     margin: 0 auto;
     font-size: 1.2rem;
+    box-sizing: border-box;
 }
 
 body {
     width: 100%;
     height: 100vh;
     margin: 0;
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
     overflow: hidden;
 }
 
@@ -81,7 +82,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 2px;
     margin: 10px 0;
 }
 
@@ -98,63 +99,11 @@ body {
     overflow: hidden;
 }
 
-/* .nav-list:hover {
+.nav-list:hover {
     color: var(--hover-text-color);
     background-color: var(--main-color);
     width: 100%;
-} */
-
-.nav-list::before,
-.nav-list::after {
-  content: "";
-  position: absolute;
-  /* Start hidden, or positioned off the edge */
-  opacity: 0; 
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  
-  /* Create a large circle/semicircle */
-  width: 40px; /* Must be at least twice the desired radius */
-  height: 40px;
-  background-color: var(--main-color); /* Match the background *behind* the link, e.g., the body background */
-  pointer-events: none; /* Allows clicks on the link */
 }
-
-nav-list::before {
-  top: 0;
-  right: 0;
-  /* Position the element so that only the inner, concave arc is visible */
-  transform: translate(100%, -100%); /* Start completely off-screen */
-  /* border-bottom-left-radius: 40px; Creates the rounded corner */
-}
-
-.nav-list::after {
-  bottom: 0;
-  right: 0;
-  /* Position the element so that only the inner, concave arc is visible */
-  transform: translate(100%, 100%); /* Start completely off-screen */
-  border-top-left-radius: 40px; /* Creates the rounded corner */
-}
-
-.nav-list:hover::before,
-.nav-list:hover::after {
-  opacity: 1; 
-  /* Move them into position to "cut out" the corner */
-  transform: translate(0, 0); 
-}
-
-/* Refined Hover Positioning (Recommended) */
-.nav-list:hover::before {
-  /* Aligns the pseudo-element's corner with the link's corner */
-  transform: translate(2px, -2px); /* Adjust based on border size */
-}
-
-.nav-list::after {
-  /* Aligns the pseudo-element's corner with the link's corner */
-  transform: translate(2px, 2px); /* Adjust based on border size */
-}
-
-
-
 
 
 
