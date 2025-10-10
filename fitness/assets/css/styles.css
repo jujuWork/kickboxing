@@ -1,23 +1,71 @@
+:root {
+    --primary-color: #fff;
+    --secondary-color: #CF0A0A;
+    --main-text-font:
+        .facilityont-family: "Noto Sans JP", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 2400px;
+    font-size: 1.1rem;
+    font-style: var(--main-text-font);
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto 1fr auto;
-    gap: 0;
-    grid-template-areas:
-        'nav nav nav nav'
-        'header header header header'
-        'content content content'
-        'footer footer footer footer'
-    ;
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto; /* Centers the content horizontally */
+    max-width: 1920px; /* Or any width you prefer */
+    background: url('../img/hero/h1_hero.png') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
 }
 
-.nav {
-    grid-area: nav;
-    background-color: aqua;
+/************** NAVIGATION **************/
+.nav-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 3em 0 0 0;
 }
+
+.nav-list {
+    border: 1px solid red;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-left: auto;
+    flex: 1;
+    height: 3em;
+    align-items: center;
+
+    li {
+        list-style: none;
+        color: var(--primary-color);
+        margin-left: 3rem;
+        text-transform: capitalize;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    li:hover {
+        color: var(--secondary-color);
+    }
+
+    button {
+        background-color: var(--secondary-color);
+        margin-left: 1.5rem;
+        height: 100%;
+        padding: 0 2.5em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+    }
+}
+
