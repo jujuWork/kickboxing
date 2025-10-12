@@ -2,9 +2,13 @@
     --primary-color: #fff;
     --secondary-color: #CF0A0A;
     --main-text-font:
-        .facilityont-family: "Noto Sans JP", sans-serif;
+        font-family: "Teko", sans-serif;
         font-optical-sizing: auto;
-        font-weight: weight;
+        font-weight: 400;
+        font-style: normal;
+    --secondary-text-font: 
+        font-family: "Barlow", sans-serif;
+        font-weight: 400;
         font-style: normal;
 }
 
@@ -34,6 +38,7 @@ body {
     flex-wrap: wrap;
     width: 100%;
     margin: 3em 0 0 0;
+    height: 10vh;
 }
 
 .nav-list {
@@ -43,8 +48,10 @@ body {
     flex-wrap: wrap;
     margin-left: auto;
     flex: 1;
-    height: 3em;
+    height: 10vh;
     align-items: center;
+    position: relative;
+    font: var(--main-text-font);
 
     li {
         list-style: none;
@@ -63,9 +70,13 @@ body {
         background-color: var(--secondary-color);
         margin-left: 1.5rem;
         height: 100%;
-        padding: 0 2.5em;
+        padding: 0 10px;
         text-transform: uppercase;
         color: var(--primary-color);
+        min-width: 200px;
+        width: 15vw;
+        max-width: 250px;
+        font-size: 2vw;
     }
 }
 
