@@ -42,7 +42,6 @@ body {
 }
 
 .nav-list {
-    border: 1px solid red;
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
@@ -76,7 +75,7 @@ body {
         min-width: 200px;
         width: 15vw;
         max-width: 250px;
-        font-size: 2vw;
+        font-size: clamp(16px, 2vw, 20px);
     }
 }
 
